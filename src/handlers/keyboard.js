@@ -137,8 +137,10 @@ export default function(i) {
       return;
     }
 
-    element.scrollTop -= deltaY;
-    element.scrollLeft += deltaX;
+    element.scrollTo({
+      top: element.scrollTop - deltaY,
+      left: element.scrollLeft + deltaX
+    });
     updateGeometry(i);
 
     if (shouldPreventDefault(deltaX, deltaY)) {
